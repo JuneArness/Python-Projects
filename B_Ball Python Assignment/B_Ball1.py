@@ -61,22 +61,33 @@ fileList = ['information.docx', 'Hello.txt','myImage.png', \
 for x in fileList:
   print(x)
 
-if
+
+oneTuple = ('one',)
+multiTuple = ('two', 'three', 'four')
+
+result = oneTuple + multiTuple
+print(result)
+
+import sqlite3
+
+conn = sqlite3.connect('B_Ball.db')
+
 with conn:
     cur = conn.cursor()
-    cur.execute("CREATE TABLE IF NOT EXISTS tbl_highlights( \
-        ID INTEGER PRIMARY KEY AUTOINCREMENT, \
-        col_points TEXT, \
-        )")
+    cur.execute("CREATE TABLE IF NOT EXISTS tbl_highlights(ID INTEGER PRIMARY KEY AUTOINCREMENT,\
+                col_points TEXT)")
     conn.commit()
-conn.close()
+conn = sqlite3.connect('B_Ball.db')
 
 
+highlights_tuple = ('Micheal', 'Kobe', 'LeBron')
 
-with conn:
-    cur = conn.cursor()
-    cur.execute("SELECT col_fname,col_lname,col_position FROM tbl_players WHERE col_fname = 'Jordan'")
-    varPerson = cur.fetchall()
-    for item in varPerson:
-        msg = "First Name: ()\nLast Name:()\position:()".format(item[0],item[1],item[2])
-        print(msg)
+for x in highlights_tuple:
+    if x.endswith('.txt'):
+        with conn:
+            cur = conn.cursor()
+            cur.execute("INSERT INTO tbl_highlights (col_points) VALUES (?)", (x,))
+            print(x)
+
+
+  
