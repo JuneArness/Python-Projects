@@ -56,3 +56,27 @@ if os.path.exists('World.txt'):
 else:
     print ("File not exist")
 
+fileList = ['information.docx', 'Hello.txt','myImage.png', \
+            'myMovie.mpg','World.txt','data.pdf','myPhoto.jpg']
+for x in fileList:
+  print(x)
+
+if
+with conn:
+    cur = conn.cursor()
+    cur.execute("CREATE TABLE IF NOT EXISTS tbl_highlights( \
+        ID INTEGER PRIMARY KEY AUTOINCREMENT, \
+        col_points TEXT, \
+        )")
+    conn.commit()
+conn.close()
+
+
+
+with conn:
+    cur = conn.cursor()
+    cur.execute("SELECT col_fname,col_lname,col_position FROM tbl_players WHERE col_fname = 'Jordan'")
+    varPerson = cur.fetchall()
+    for item in varPerson:
+        msg = "First Name: ()\nLast Name:()\position:()".format(item[0],item[1],item[2])
+        print(msg)
