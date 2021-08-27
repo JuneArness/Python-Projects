@@ -23,7 +23,7 @@ class Employee(User):
     def getLoginInfo(self):
         entry_name = input("Enter your name: ")
         entry_email = input("Enter your email: ")
-        entryt_pin = input("Enter your pin: ")
+        entry_pin = input("Enter your pin: ")
         if (entry_email == self.email and entry_pin == self.pin_number):
             print("Welcome back, {}!".format(entry_name))
         else:
@@ -40,7 +40,7 @@ class Admin(User):
     def getLoginInfo(self):
         entry_name = input("Enter your name: ")
         entry_email = input("Enter your email: ")
-        entryt_pin = input("Enter your pin: ")
+        entry_pin = input("Enter your pin: ")
         if (entry_email == self.email and entry_pin == self.pin_number):
             print("Welcome Admin, {}!".format(entry_name))
         else:
@@ -50,8 +50,12 @@ class Admin(User):
     #The following code invokes the method inside each class for User and Employee.
 
 
-    customer = User()
-    customer.getLoginInfo()
+customer = User()
+customer.getLoginInfo()
 
-    manager = Employee()
-    manager.getLoginInfo()
+manager = Employee()
+manager.getLoginInfo()
+
+admin = Admin()
+admin.getLoginInfo()
+
