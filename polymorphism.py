@@ -26,7 +26,7 @@ class Employee(User):
         entryt_pin = input("Enter your pin: ")
         if (entry_email == self.email and entry_pin == self.pin_number):
             print("Welcome back, {}!".format(entry_name))
-         else:
+        else:
             print("The pin or email is incorrect")
 
 class Admin(User):
@@ -43,7 +43,7 @@ class Admin(User):
         entryt_pin = input("Enter your pin: ")
         if (entry_email == self.email and entry_pin == self.pin_number):
             print("Welcome Admin, {}!".format(entry_name))
-         else:
+        else:
             print("The pin or email is incorrect")
 
 
@@ -54,4 +54,4 @@ class Admin(User):
     customer.getLoginInfo()
 
     manager = Employee()
-    manager.getLogininfo()
+    manager.getLoginInfo()
