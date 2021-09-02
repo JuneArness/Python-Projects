@@ -1,3 +1,6 @@
+import sqlite3
+conn = sqlite3.connect(':memory:')import mysql.connector
+
 
 
 #parent class
