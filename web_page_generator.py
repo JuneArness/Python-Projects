@@ -35,26 +35,26 @@ class ParentWindow(Frame):
         self.btnCancel = Button(self.master, text="Cancel", width=10, height=2, command = self.cancel)
         self.btnCancel.grid(row=2, column=1,padx=(0,90), pady=(30,0), sticky=NE)
             
-        def submit(self):
-            #STEP WHAT SHOULD HAPPEN WHEN  SUBMIT IS CALLED
-            #STEP 1: function self.varBody is called
-            #STEP 2: HTML code is writen
-            #STEP 3: HTML page is called
-            fn = self.varBody.get()
-        
-        f = open('summersale.html','w')
+            def submit(self):
+                #STEP WHAT SHOULD HAPPEN WHEN  SUBMIT IS CALLED
+                #STEP 1: function self.varBody is called
+                #STEP 2: HTML code is writen
+                #STEP 3: HTML page is called
+                fn = self.varBody.get()
+            
+            f = open('summersale.html','w')
 
-        message = """<html>
-        <head></head>
-        <body><p>Stay tuned for our amazing summer sale!</p></body>
-        </html>"""
-        
-        f.write(message)
-        f.close()
-        self.lblDisplay.config(text='Hello {} {}!'.format(body))
+            message = """<html>
+            <head></head>
+            <body><p>Stay tuned for our amazing summer sale!</p></body>
+            </html>"""
+            
+            f.write(message)
+            f.close()
+            self.lblDisplay.config(text='Hello {} {}!'.format(body))
 
-        def cancel(self):
-            self.master.destroy()
+            def cancel(self):
+                self.master.destroy()
 
 
 if __name__ == "__main__":
