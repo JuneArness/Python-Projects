@@ -1,0 +1,77 @@
+<!DOCTYPEhtml>
+<html>
+    <head>
+        <Script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></Script>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin>
+        </script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin>
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
+    </head>
+    <body>
+       <div id="like_button_container"></div>
+       <div id="My_React.Code"></div>
+       <script>
+           var Counter = React.createClass({
+               render: function() {
+                   var time_Passed = Math.round(this.props.time_Passed / 100);
+                   var seconds_Passed = time_Passed / 10 + (times_Passed % 10 ? '' : '.0');
+                   var text = 'My React code started running ' +
+                       seconds_Passed + ' seconds ago!';
+                   return React.DOM.p(null, text);
+               }
+           });
+
+           var counter_Factory = React.createFactory(Counter);
+
+           var start_Counting = new Date().getTime();
+           setInterval(function() {
+               ReactDOM.render(
+                   counter_Factory({time_Passed: new Date().getTime() - start_Counting}),
+                   document.getElementById('My_React_Code')
+               );
+           }, 50);
+
+           const X = React.createElement;
+
+           class likeButton extends React.Component {
+               constructor(props) {
+                   super(props);
+                   this.state = { liked:false };
+               }
+
+               render() {
+                   if (this.state.liked) {
+                       return 'You clicked the like button';
+                   }
+
+                   return X {
+                       'button',
+                       {onClick: () => this.setState({ liked: true }) },
+                   };
+               }
+           }
+
+       <script type="text/babel">
+       class Greeting extends React.Component {
+           render () {
+               return<h1>Hello World!</h1>
+           }
+       }
+       ReactDOM.render(<Greeting />, document.getElementById('JSX'))
+       </script>
+
+
+
+        <script src="react.js"></script>
+        <script src="react-dom.js"></script>
+    </body>
+</html>
+
+
+
+
+$ npx create-react-app my-app
+$ cd my-app
+$ npm start
