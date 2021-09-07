@@ -2,6 +2,7 @@
 
 import tkinter
 from tkinter import *
+import webbrowser 
 #WHEN THE PROGRAM RUNS WHAT SHOULD HAPPEN?
 #STEP 1: GUI SHOULD DISPLAY WITH ENTRY AND BUTTON WIDGET
 #STEP 2: USER ENTERS INPUT TO ENTRY WIDGET
@@ -17,14 +18,15 @@ class ParentWindow(Frame):
         self.master.title('Summer Sale!')
         self.master.config(bg='gray')
 
-        self.varBody = StringVar()
+        #self.varBody = StringVar()
         
         self.lblBody = Label(self.master,text='Type in text here: ', font=("Helvetica", 16), fg='black', bg='gray' )
         self.lblBody.grid(row=0, column=0,padx=(30,0), pady=(30,0))
+        
         self.lblDisplay = Label(self.master,text='', font=("Helvetica", 16), fg='black', bg='gray')
         self.lblDisplay.grid(row=3, column=1,padx=(30,0), pady=(30,0))
        
-        self.txtBody = Entry(self.master,text=self.varBody, font=("Helvetica", 16), fg='black', bg='gray' )
+        self.txtBody = Entry(self.master, font=("Helvetica", 16), fg='black', bg='gray' )
         self.txtBody.grid(row=0, column=1,padx=(30,0), pady=(30,0))
 
        
@@ -35,26 +37,32 @@ class ParentWindow(Frame):
         self.btnCancel = Button(self.master, text="Cancel", width=10, height=2, command = self.cancel)
         self.btnCancel.grid(row=2, column=1,padx=(0,90), pady=(30,0), sticky=NE)
             
-            def submit(self):
-                #STEP WHAT SHOULD HAPPEN WHEN  SUBMIT IS CALLED
-                #STEP 1: function self.varBody is called
-                #STEP 2: HTML code is writen
-                #STEP 3: HTML page is called
-                fn = self.varBody.get()
-            
-            f = open('summersale.html','w')
+    def submit(self):
+        #STEP WHAT SHOULD HAPPEN WHEN  SUBMIT IS CALLED
+        #STEP 1: function self.varBody is called
+        #STEP 2: HTML code is writen
+        #STEP 3: HTML page is called
+        f = open('summersale.html','w')
+    
+        body = self.txtBody.get()
+        
+        #get the string from the txtBody Entry widget and assign to variable
 
-            message = """<html>
-            <head></head>
-            <body><p>Stay tuned for our amazing summer sale!</p></body>
-            </html>"""
-            
-            f.write(message)
-            f.close()
-            self.lblDisplay.config(text='Hello {} {}!'.format(body))
-
-            def cancel(self):
-                self.master.destroy()
+        print (body)
+        
+        message = """<html>
+        <head></head>
+        <body><p>{}</p></body>
+        </html>""".format(body)
+        
+        
+        f.write(message)
+        f.close()
+        webbrowser.open_new('summersale.html')
+       
+       
+    def cancel(self):
+        self.master.destroy()
 
 
 if __name__ == "__main__":

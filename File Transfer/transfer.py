@@ -4,10 +4,10 @@ import shutil
 import os
 
 #set where the source of the files are
-source = './folder_a.py/'
+source = 'C:\\Users\\junio\\OneDrive\\Documents\\GitHub\\Python-Projects\\File Transfer\\folder_a.py'
 
 #set the destination path to filderB
-destination = '/folder_b.py/'
+destination = 'C:\\Users\\junio\\OneDrive\\Documents\\GitHub\\Python-Projects\\File Transfer\\folder_b.py'
 files = os.listdir(source)
 
 for i in files:
