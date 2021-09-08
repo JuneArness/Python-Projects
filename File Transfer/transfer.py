@@ -91,7 +91,7 @@ class ParentWindow(Frame):
         for i in files:
             #we are saying move the files represented by 'i' to their new destination
             shutil.move(source+"/"+i, destination)
-
+        # Here is where the text file is called:
         import os
 
         os.path.exists('./text-1.txt/')
