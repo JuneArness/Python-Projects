@@ -4,8 +4,8 @@ import tkinter
 from tkinter import *
 
 class ParentWindow(Frame):
-    def __int__ (self, master):
-        Frame.__int__ (self)
+    def __init__ (self, master):
+        Frame.__init__ (self)
 
         self.master = master
         self.master.resizable(width=True, height=True)
